@@ -1,8 +1,8 @@
-FROM php:7.2-cli
+FROM php:7.4-cli
 
 RUN apt-get update &&\
     apt-get install -y \
-    zlib1g-dev libpng-dev libjpeg-dev postgresql-client zip rsync git libpq-dev
+    zlib1g-dev libpng-dev libjpeg-dev postgresql-client zip rsync git libpq-dev libzip-dev
 
 RUN pecl install redis &&\
     docker-php-ext-enable redis
