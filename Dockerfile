@@ -9,4 +9,8 @@ RUN pecl install redis &&\
 
 RUN docker-php-ext-install zip pcntl gd pdo pdo_pgsql intl
 
+RUN apt-get update &&\
+    apt-get install -y python3-pip &&\
+    pip3 install docker-compose
+
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
